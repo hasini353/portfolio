@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "d3flu1aqztj63wgjush0h9",
+    "createdAt": "2026-06-04T04:52:18.489Z",
+    "pageViews": 31,
+    "uniqueVisitors": 1,
+    "dailyHits": [
+      {
+        "date": "2026-06-04",
+        "count": 25
+      },
+      {
+        "date": "2026-06-05",
+        "count": 6
+      }
+    ]
+  }
+]

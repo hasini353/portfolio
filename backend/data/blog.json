@@ -1,0 +1,47 @@
+[
+  {
+    "_id": "5mh168vmiaqgi3asm3a4gd",
+    "createdAt": "2026-06-04T04:17:24.747Z",
+    "title": "Designing Low-Latency Real-Time Systems using WebSockets",
+    "excerpt": "A deep-dive analysis on building persistent bidirectional client-server channels, managing connection spikes, and WebSocket frame structures.",
+    "content": "Real-time interactivity has shifted from a premium feature to a core expectation. Whether it is a messaging app, live collaborative documents, or financial tickers, users expect zero lag.\n\nIn this article, we examine the mechanics of **WebSockets**, why they outperform traditional polling techniques, and how to scale them within a Node.js ecosystem.\n\n## Why HTTP Polling Fails\nUnder HTTP/1.1, clients check for updates using short polling (repeated requests) or long polling (hanging requests). This creates massive overhead:\n1. **Header Bloat:** Every HTTP call contains headers, adding 500-1000 bytes per frame.\n2. **Socket Exhaustion:** Establishing new TCP handshakes constantly exhausts OS ports.\n3. **CPU Overhead:** Parsing headers repeatedly spikes server CPU usage.\n\n## The WebSocket Handshake\nWebSockets use a single TCP handshake. The client upgrades the HTTP/1.1 connection to a bidirectional tunnel:\n\n```http\nGET /chat HTTP/1.1\nHost: server.example.com\nUpgrade: websocket\nConnection: Upgrade\nSec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==\nSec-WebSocket-Version: 13\n```\n\nThe server acknowledges, establishing a persistent TCP connection:\n```http\nHTTP/1.1 101 Switching Protocols\nUpgrade: websocket\nConnection: Upgrade\nSec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=\n```\n\n## Handling Concurrency in Node.js\nNode.js's event-driven nature makes it perfect for WebSocket connections. Using the `ws` or `socket.io` library, we can manage thousands of concurrent open tunnels.\n\nHere is a simple example showing how to scale connections using a Pub/Sub adapter (like Redis) for multi-node distribution:\n\n```javascript\nconst http = require('http');\nconst socketIO = require('socket.io');\nconst redisAdapter = require('socket.io-redis');\n\nconst server = http.createServer();\nconst io = socketIO(server);\n\n// Bind Redis adapter to share state across server replicas\nio.adapter(redisAdapter({ host: 'localhost', port: 6379 }));\n\nio.on('connection', (socket) => {\n  console.log('Client connected:', socket.id);\n\n  socket.on('message', (data) => {\n    // Broadcast message to all instances\n    io.emit('broadcast', data);\n  });\n});\n\nserver.listen(5000);\n```\n\nBy incorporating a Redis backplane, any message received on a specific node will automatically sync with all other nodes, maintaining low-latency state.",
+    "category": "System Design",
+    "tags": [
+      "Node.js",
+      "WebSockets",
+      "Redis",
+      "Scalability"
+    ],
+    "slug": "designing-low-latency-real-time-systems-websockets"
+  },
+  {
+    "_id": "16d1e5fpdqytu91snjqlor",
+    "createdAt": "2026-06-04T04:17:24.749Z",
+    "title": "Building Scalable ML Pipelines with AWS SageMaker and Lambda",
+    "excerpt": "How to automate datasets preprocessing, model trigger sequences, and expose serverless prediction APIs using AWS Lambda and API Gateway.",
+    "content": "Deploying Machine Learning models to production requires scalable, reliable, and low-latency infrastructure.\n\nThis guide outlines our architectural approach during my **AWS AI/ML Virtual Internship**, detailing how we structured datasets pipeline triggers, SageMaker training jobs, and built serverless endpoints using AWS Lambda and API Gateway.\n\n## Architectural Overview\nOur pipeline comprises four modular tiers:\n1. **Ingestion & Storage (S3):** Datasets are loaded as CSV/Parquet files into structured buckets.\n2. **Preprocessing & Training (SageMaker):** Triggered on data ingestion to train/tune models.\n3. **Serverless Inference (Lambda):** Loads trained models to perform sub-100ms forecasts.\n4. **API Gateway:** Exposes RESTful endpoints for frontend application consumption.\n\n## Automating Inference via Lambda\nTo avoid hosting active EC2 clusters 24/7, we use AWS Lambda to load model packages serverlessly. Here is the implementation pattern for the serverless inference function:\n\n```python\nimport json\nimport boto3\nimport os\n\n# Initialize client\nsagemaker_runtime = boto3.client('runtime.sagemaker')\nENDPOINT_NAME = os.environ['ENDPOINT_NAME']\n\ndef lambda_handler(event, context):\n    try:\n        # Extract payload from incoming API Gateway request\n        body = json.loads(event['body'])\n        data_records = body['data']\n        \n        # Invoke SageMaker Endpoint\n        response = sagemaker_runtime.invoke_endpoint(\n            EndpointName=ENDPOINT_NAME,\n            ContentType='text/csv',\n            Body=','.join(map(str, data_records))\n        )\n        \n        # Decode prediction results\n        predictions = response['Body'].read().decode('utf-8')\n        return {\n            'statusCode': 200,\n            'headers': {'Access-Control-Allow-Origin': '*'},\n            'body': json.dumps({'prediction': predictions})\n        }\n    except Exception as e:\n        return {\n            'statusCode': 500,\n            'body': json.dumps({'error': str(e)})\n        }\n```\n\n## Key Takeaways\n- **Cost Reduction:** Serverless hosting lowered our test environment expenses by 75% compared to active instances.\n- **Micro-batch Processing:** Lambda successfully ingested 10K+ batch records, parsing and piping inputs cleanly without timeout failures.",
+    "category": "Cloud Computing",
+    "tags": [
+      "AWS Lambda",
+      "SageMaker",
+      "Python",
+      "Serverless"
+    ],
+    "slug": "building-scalable-ml-pipelines-sagemaker-lambda"
+  },
+  {
+    "_id": "uin64f4zs6adelpwdjeno",
+    "createdAt": "2026-06-04T04:17:24.752Z",
+    "title": "Optimizing MongoDB Indexes for Distributed MERN Applications",
+    "excerpt": "Why collection scans destroy performance and how index structures like compound indexes and TTL indexes reduce query response latency.",
+    "content": "In MERN applications, database access is often the primary bottleneck. As data grows, generic queries start executing \"Collection Scans\" (COLLSCAN), iterating over every document in a collection.\n\nThis article details how to profile queries and implement MongoDB index patterns to speed up query execution by **20% to 25%**.\n\n## Understanding COLLSCAN vs IXSCAN\nSuppose you run this query in Express:\n```javascript\nconst submissions = await Submission.find({ studentId, graded: false });\n```\nIf you have 100,000 documents, MongoDB will search all 100,000 sequentially unless an index is found.\n\nBy using MongoDB's `explain()` parameter, we can verify this:\n```javascript\nconst explanation = await Submission.find({ studentId, graded: false }).explain(\"executionStats\");\nconsole.log(explanation.queryPlanner.winningPlan.stage); // Outputs \"COLLSCAN\"\n```\n\n## The Remedy: Compound Indexes\nTo optimize this query, we create a **Compound Index** covering both fields. The order of fields matters: put equality fields first, then range/sort fields:\n\n```javascript\n// Create compound index on studentId (equality) and graded (equality)\nsubmissionSchema.index({ studentId: 1, graded: 1 });\n```\n\nNow, running the query uses an **Index Scan** (IXSCAN):\n1. MongoDB navigates the index B-tree instantly using `studentId`.\n2. It pinpoints the documents matching `graded`.\n3. It fetches only the targeted documents.\n\nQuery execution time drops from 120ms to 2ms.\n\n## Performance Comparison\nHere is the performance latency profile during our indexing stress tests:\n\n| Dataset Size | COLLSCAN Query Time | IXSCAN Query Time | Latency Saved |\n|--------------|---------------------|-------------------|---------------|\n| 10,000 docs  | 14ms                | 1.1ms             | ~92%          |\n| 100,000 docs | 118ms               | 2.4ms             | ~98%          |\n\nBy building compound indexes on query fields, you insulate your Express backend from database latency spikes.",
+    "category": "Databases",
+    "tags": [
+      "MongoDB",
+      "Indexing",
+      "Mongoose",
+      "Database Optimization"
+    ],
+    "slug": "optimizing-mongodb-indexes-distributed-mern"
+  }
+]

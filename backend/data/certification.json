@@ -1,0 +1,45 @@
+[
+  {
+    "_id": "z6rc0c4rc47n3abm59xo3",
+    "createdAt": "2026-06-04T04:17:24.728Z",
+    "name": "AWS Cloud Foundations",
+    "issuer": "Amazon Web Services (AWS)",
+    "date": "June 2025",
+    "credentialLink": "#",
+    "skillsLearned": [
+      "Cloud Infrastructure",
+      "EC2",
+      "S3",
+      "IAM",
+      "VPC"
+    ]
+  },
+  {
+    "_id": "g849ddmqvie7kwfsmvs2d6",
+    "createdAt": "2026-06-04T04:17:24.729Z",
+    "name": "Machine Learning Foundations",
+    "issuer": "EduSkills / AWS Academy",
+    "date": "July 2025",
+    "credentialLink": "#",
+    "skillsLearned": [
+      "Model Training",
+      "SageMaker",
+      "Supervised Learning",
+      "Feature Engineering"
+    ]
+  },
+  {
+    "_id": "k6jb5m31supebaafezxac",
+    "createdAt": "2026-06-04T04:17:24.732Z",
+    "name": "Oracle Cloud Infrastructure Certified Foundations",
+    "issuer": "Oracle",
+    "date": "May 2025",
+    "credentialLink": "#",
+    "skillsLearned": [
+      "OCI Compute",
+      "Cloud Security",
+      "Autonomous Database",
+      "Virtual Networks"
+    ]
+  }
+]

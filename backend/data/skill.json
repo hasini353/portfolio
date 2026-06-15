@@ -1,0 +1,209 @@
+[
+  {
+    "_id": "dzwud7kvd6lr51txzdhfk",
+    "createdAt": "2026-06-04T04:17:24.662Z",
+    "name": "Java",
+    "category": "Programming Languages",
+    "level": "Expert",
+    "icon": "Code",
+    "glowColor": "#00E5FF"
+  },
+  {
+    "_id": "yco0a50gx5s8axhmnw74a",
+    "createdAt": "2026-06-04T04:17:24.665Z",
+    "name": "C++",
+    "category": "Programming Languages",
+    "level": "Expert",
+    "icon": "Code",
+    "glowColor": "#7C3AED"
+  },
+  {
+    "_id": "ics210rp5xf44wel41x09",
+    "createdAt": "2026-06-04T04:17:24.667Z",
+    "name": "Python",
+    "category": "Programming Languages",
+    "level": "Advanced",
+    "icon": "Code",
+    "glowColor": "#22C55E"
+  },
+  {
+    "_id": "yz8zhsq5p4efxi1ohg1gvp",
+    "createdAt": "2026-06-04T04:17:24.669Z",
+    "name": "JavaScript",
+    "category": "Programming Languages",
+    "level": "Expert",
+    "icon": "Code",
+    "glowColor": "#EF4444"
+  },
+  {
+    "_id": "zn3o1cl3x2ba3fkmmm31j",
+    "createdAt": "2026-06-04T04:17:24.671Z",
+    "name": "React.js",
+    "category": "Frontend Development",
+    "level": "Expert",
+    "icon": "Layout",
+    "glowColor": "#00E5FF"
+  },
+  {
+    "_id": "5ddp6fp4xwkmn5z4ajb0j7",
+    "createdAt": "2026-06-04T04:17:24.673Z",
+    "name": "HTML5/CSS3",
+    "category": "Frontend Development",
+    "level": "Expert",
+    "icon": "Layout",
+    "glowColor": "#EF4444"
+  },
+  {
+    "_id": "o1cj512dyb9j9x7mmp40ia",
+    "createdAt": "2026-06-04T04:17:24.675Z",
+    "name": "Tailwind CSS",
+    "category": "Frontend Development",
+    "level": "Expert",
+    "icon": "Layout",
+    "glowColor": "#3B82F6"
+  },
+  {
+    "_id": "9euadbb6akvo4hgyqmgzi",
+    "createdAt": "2026-06-04T04:17:24.680Z",
+    "name": "Node.js",
+    "category": "Backend Development",
+    "level": "Expert",
+    "icon": "Server",
+    "glowColor": "#22C55E"
+  },
+  {
+    "_id": "fl56qv69i14zucnl8ten4t",
+    "createdAt": "2026-06-04T04:17:24.683Z",
+    "name": "Express.js",
+    "category": "Backend Development",
+    "level": "Expert",
+    "icon": "Server",
+    "glowColor": "#FFFFFF"
+  },
+  {
+    "_id": "8ufut5s22mrvw9tafokui",
+    "createdAt": "2026-06-04T04:17:24.686Z",
+    "name": "REST APIs",
+    "category": "Backend Development",
+    "level": "Expert",
+    "icon": "Server",
+    "glowColor": "#00E5FF"
+  },
+  {
+    "_id": "bp8o1uj40xjcu8s23l7hcs",
+    "createdAt": "2026-06-04T04:17:24.688Z",
+    "name": "Microservices",
+    "category": "Backend Development",
+    "level": "Advanced",
+    "icon": "Server",
+    "glowColor": "#7C3AED"
+  },
+  {
+    "_id": "f9liuashjbgsa265anm",
+    "createdAt": "2026-06-04T04:17:24.690Z",
+    "name": "MongoDB",
+    "category": "Databases",
+    "level": "Expert",
+    "icon": "Database",
+    "glowColor": "#22C55E"
+  },
+  {
+    "_id": "vjno71qhqvly6cgiq8m1m",
+    "createdAt": "2026-06-04T04:17:24.693Z",
+    "name": "SQL/DBMS",
+    "category": "Databases",
+    "level": "Advanced",
+    "icon": "Database",
+    "glowColor": "#3B82F6"
+  },
+  {
+    "_id": "myz3l4x3mkowsn6l3utzl",
+    "createdAt": "2026-06-04T04:17:24.695Z",
+    "name": "AWS (S3, Lambda, API Gateway)",
+    "category": "Cloud Computing",
+    "level": "Advanced",
+    "icon": "Cloud",
+    "glowColor": "#FF9900"
+  },
+  {
+    "_id": "b1waw1w9ehwp7lfx29xq7",
+    "createdAt": "2026-06-04T04:17:24.699Z",
+    "name": "AWS SageMaker",
+    "category": "Cloud Computing",
+    "level": "Advanced",
+    "icon": "Cloud",
+    "glowColor": "#FF9900"
+  },
+  {
+    "_id": "d7hcr10qqrogihvppuovl",
+    "createdAt": "2026-06-04T04:17:24.701Z",
+    "name": "Oracle Cloud",
+    "category": "Cloud Computing",
+    "level": "Intermediate",
+    "icon": "Cloud",
+    "glowColor": "#EF4444"
+  },
+  {
+    "_id": "hc01dvmf4450ctp5mtf6nyk",
+    "createdAt": "2026-06-04T04:17:24.703Z",
+    "name": "Machine Learning Pipelines",
+    "category": "AI/ML",
+    "level": "Advanced",
+    "icon": "Cpu",
+    "glowColor": "#7C3AED"
+  },
+  {
+    "_id": "pb31wzu3vv23dxqttf5c3",
+    "createdAt": "2026-06-04T04:17:24.704Z",
+    "name": "AI Agents & Automation",
+    "category": "AI/ML",
+    "level": "Learning",
+    "icon": "Cpu",
+    "glowColor": "#00E5FF"
+  },
+  {
+    "_id": "t39upxct41ba318rhvzldi",
+    "createdAt": "2026-06-04T04:17:24.706Z",
+    "name": "Git & GitHub",
+    "category": "Tools",
+    "level": "Expert",
+    "icon": "Terminal",
+    "glowColor": "#FFFFFF"
+  },
+  {
+    "_id": "y07nre4fztangymx1rxmjh",
+    "createdAt": "2026-06-04T04:17:24.708Z",
+    "name": "VS Code",
+    "category": "Tools",
+    "level": "Expert",
+    "icon": "Terminal",
+    "glowColor": "#00E5FF"
+  },
+  {
+    "_id": "f30d6i2u225gt9d9rwbcl",
+    "createdAt": "2026-06-04T04:17:24.710Z",
+    "name": "WebSockets",
+    "category": "Tools",
+    "level": "Advanced",
+    "icon": "Terminal",
+    "glowColor": "#7C3AED"
+  },
+  {
+    "_id": "vp18haocrrqmzj29jt5d7",
+    "createdAt": "2026-06-04T04:17:24.712Z",
+    "name": "System Design & Scalability",
+    "category": "System Design",
+    "level": "Advanced",
+    "icon": "Cpu",
+    "glowColor": "#00E5FF"
+  },
+  {
+    "_id": "5ludpxsdosplnz7xuw3tb",
+    "createdAt": "2026-06-04T04:17:24.714Z",
+    "name": "Distributed Systems",
+    "category": "System Design",
+    "level": "Advanced",
+    "icon": "Cpu",
+    "glowColor": "#7C3AED"
+  }
+]
