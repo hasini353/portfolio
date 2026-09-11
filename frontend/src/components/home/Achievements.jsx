@@ -5,17 +5,28 @@ import { Trophy, Code, Cloud, Database } from 'lucide-react';
 const ACHIEVEMENTS = [
   {
     title: 'Problems Solved on LeetCode',
-    value: 400,
+    value: 500,
     prefix: '',
     suffix: '+',
-    icon: Code
+    icon: Code,
+    link: 'https://leetcode.com/u/hasini_353/'
   },
   {
     title: 'LeetCode Contest Rating',
     value: 1544,
     prefix: '',
     suffix: '',
-    icon: Trophy
+    icon: Trophy,
+    link: 'https://leetcode.com/u/hasini_353/'
+  },
+  {
+    title: 'Microsoft SQL AI Developer Associate (DP-800)',
+    value: 1,
+    prefix: '',
+    suffix: '',
+    icon: Database,
+    isBoolean: true,
+    link: 'https://learn.microsoft.com/en-us/users/gundubogulahasini-9997/credentials/aee504816b6e1074'
   },
   {
     title: 'AWS Cloud Foundations Certified',
@@ -23,7 +34,8 @@ const ACHIEVEMENTS = [
     prefix: '',
     suffix: '',
     icon: Cloud,
-    isBoolean: true
+    isBoolean: true,
+    link: 'https://www.credly.com/badges/5014137e-685b-40b1-b636-9a205ac2baa5/public_url'
   },
   {
     title: 'AWS Machine Learning Foundations',
@@ -31,7 +43,8 @@ const ACHIEVEMENTS = [
     prefix: '',
     suffix: '',
     icon: Cloud,
-    isBoolean: true
+    isBoolean: true,
+    link: 'https://www.credly.com/badges/e4fd7ca9-0898-46af-8030-972dcf135be0/public_url'
   },
   {
     title: 'Oracle AI Cloud Database Services',
@@ -39,7 +52,8 @@ const ACHIEVEMENTS = [
     prefix: '',
     suffix: '',
     icon: Database,
-    isBoolean: true
+    isBoolean: true,
+    link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=AC7EF90B7A919641C2198C4BA18A2F5BFB944969C9EC0E244419BB6F924962D7'
   },
   {
     title: 'Oracle Generative AI Professional',
@@ -47,7 +61,26 @@ const ACHIEVEMENTS = [
     prefix: '',
     suffix: '',
     icon: Database,
-    isBoolean: true
+    isBoolean: true,
+    link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=EDC09677A9C39764D7C8CBB9B452315A59C629033421CB7D2A3AAD9FF6C9D972'
+  },
+  {
+    title: 'CCNA:Introduction to Networks',
+    value: 1,
+    prefix: '',
+    suffix: '',
+    icon: Database,
+    isBoolean: true,
+    link: 'https://www.credly.com/badges/ae544521-bac0-4759-bb7b-a5762bf489bc/public_url'
+  },
+  {
+    title: 'AWS Generative AI Foundations',  
+    value: 1,
+    prefix: '',
+    suffix: '',
+    icon: Database,
+    isBoolean: true,
+    link: 'https://www.credly.com/badges/29c21727-35b1-4ff2-8e8f-25db9fc7df1b/public_url'
   }
 ];
 
@@ -76,7 +109,7 @@ const CounterCard = ({ achievement }) => {
   }, [achievement.value]);
 
   return (
-    <div className="glass-panel p-6 border-t-2 border-[#FF1E1E] bg-[#0A0A0A]/90 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+    <a href={achievement.link} target="_blank" rel="noopener noreferrer" className="block glass-panel p-6 border-t-2 border-[#FF1E1E] bg-[#0A0A0A]/90 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#FF1E1E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
@@ -103,7 +136,7 @@ const CounterCard = ({ achievement }) => {
       {/* Decorative corners */}
       <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#FF1E1E]" />
       <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#FF1E1E]" />
-    </div>
+    </a>
   );
 };
 

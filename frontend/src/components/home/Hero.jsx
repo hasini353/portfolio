@@ -143,9 +143,9 @@ const Hero = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10 border-t border-white/5 mt-10"
           >
             {[
-              { label: 'DSA Problems Solved', value: '400+', icon: Terminal },
+              { label: 'DSA Problems Solved', value: '500+', icon: Terminal },
               { label: 'LeetCode Rating', value: '1544', icon: Activity },
-              { label: 'CGPA', value: '8.96', icon: Star },
+              { label: 'CGPA', value: '8.93', icon: Star },
               { label: 'AWS AI/ML Intern', value: '2025', icon: Briefcase },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col space-y-2 p-3 bg-[#0F0F0F]/50 border border-[#FF1E1E]/10 rounded-lg hover:border-[#FF1E1E]/40 transition-colors">

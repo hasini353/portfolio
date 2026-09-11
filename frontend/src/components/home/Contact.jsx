@@ -72,12 +72,7 @@ const Contact = () => {
           <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#FF1E1E]" />
         </motion.div>
 
-        {/* Footer */}
-        <div className="mt-16 text-center">
-          <p className="text-[#666] text-sm">
-            © 2026 Hasini Gundubogula. All Rights Reserved.
-          </p>
-        </div>
+       
 
       </div>
     </section>

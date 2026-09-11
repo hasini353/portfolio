@@ -4,6 +4,39 @@ import { Github, ExternalLink, Activity, Database, Server, Cpu } from 'lucide-re
 
 const PROJECTS = [
   {
+    title: 'RevenuePilot',
+    subtitle: 'Autonomous Revenue Operating System',
+    description: 'An AI-powered revenue optimization platform using Gemini and deterministic MongoDB analytics to identify cross-sell and customer revenue opportunities.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini', 'Razorpay'],
+    features: ['AI Optimization', 'Policy Engine', 'Razorpay Webhooks', 'Machine-Readable Endpoints'],
+    achievements: [
+      'Implemented REST APIs with a policy engine and human-in-the-loop approval.',
+      'Integrated Razorpay APIs for payment-link creation and transaction tracking.',
+      'Developed commerce endpoints supporting UAP, ACP, AP2, and x402.'
+    ],
+    links: {
+      github: 'https://github.com/hasini353/RevenuePilot',
+      demo: ''
+    }
+  },
+  {
+    title: 'AI Career Advisor',
+    subtitle: 'AI-Powered Career Guidance Platform',
+    description: 'An intelligent platform providing real-time career recommendations through a low-latency chatbot interface.',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'WebSockets'],
+    features: ['Real-Time Chatbot', 'Career Recommendations', 'Low Latency Communication', 'Scalable Backend Architecture'],
+    achievements: [
+      'Built a career-guidance chatbot that recommends paths based on skills and interests.',
+      'Implemented real-time chat interface using WebSockets for streaming responses.',
+      'Engineered recommendation logic mapping inputs across 3 categories.',
+      'Structured backend as a 3-layer architecture for maintainability.'
+    ],
+    links: {
+      github: 'https://github.com/hasini353/career-advisor',
+      demo: 'https://career-advisor-58ufj5x8x-hasini353s-projects.vercel.app/login'
+    }
+  },
+  {
     title: 'DigiDiary',
     subtitle: 'Homework Management System',
     description: 'A comprehensive platform for managing academic assignments with role-based access control and high-performance data operations.',
@@ -16,18 +49,6 @@ const PROJECTS = [
     links: {
       github: 'https://github.com/hasini353/DigiDiary',
       demo: 'https://digi-diary-a76y0ht22-hasini353s-projects.vercel.app'
-    }
-  },
-  {
-    title: 'AI Career Advisor',
-    subtitle: 'AI-Powered Career Guidance Platform',
-    description: 'An intelligent platform providing real-time career recommendations through a low-latency chatbot interface.',
-    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'WebSockets'],
-    features: ['Real-Time Chatbot', 'Career Recommendations', 'Low Latency Communication', 'Scalable Backend Architecture'],
-    achievements: [],
-    links: {
-      github: 'https://github.com/hasini353/career-advisor',
-      demo: 'https://career-advisor-58ufj5x8x-hasini353s-projects.vercel.app/login'
     }
   }
 ];
@@ -143,10 +164,12 @@ const ProjectsSummary = () => {
                   </div>
 
                   <div className="flex items-center gap-6">
-                    <a href={project.links.demo} className="flex items-center space-x-2 text-white hover:text-[#FF1E1E] transition-colors group/link font-bold uppercase text-sm tracking-wider">
-                      <ExternalLink size={16} />
-                      <span>Live Demo</span>
-                    </a>
+                    {project.links.demo && (
+                      <a href={project.links.demo} className="flex items-center space-x-2 text-white hover:text-[#FF1E1E] transition-colors group/link font-bold uppercase text-sm tracking-wider">
+                        <ExternalLink size={16} />
+                        <span>Live Demo</span>
+                      </a>
+                    )}
                     <a href={project.links.github} className="flex items-center space-x-2 text-[#A0A0A0] hover:text-white transition-colors group/link font-bold uppercase text-sm tracking-wider">
                       <Github size={16} />
                       <span>GitHub</span>

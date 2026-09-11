@@ -6,37 +6,32 @@ const SKILL_CATEGORIES = [
   {
     name: 'Programming Languages',
     icon: Terminal,
-    skills: ['Java', 'C++', 'Python', 'JavaScript']
+    skills: ['Java', 'Python', 'C++', 'JavaScript']
   },
   {
-    name: 'Frontend',
+    name: 'Generative AI & LLM',
+    icon: Brain,
+    skills: ['RAG', 'LangChain', 'LlamaIndex', 'Prompt Engineering', 'Vector DBs (ChromaDB)', 'OpenAI API']
+  },
+  {
+    name: 'Backend & Web',
     icon: Layout,
-    skills: ['React.js', 'HTML', 'CSS']
+    skills: ['REST APIs', 'Node.js', 'Express.js', 'React.js', 'HTML', 'CSS']
   },
   {
-    name: 'Backend',
-    icon: Server,
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'API Integration']
-  },
-  {
-    name: 'Cloud',
-    icon: Cloud,
-    skills: ['AWS SageMaker', 'AWS Lambda', 'AWS S3', 'AWS API Gateway']
+    name: 'Databases',
+    icon: Database,
+    skills: ['MongoDB', 'MySQL']
   },
   {
     name: 'Core Computer Science',
-    icon: Database,
+    icon: Cpu,
     skills: ['Data Structures', 'Algorithms', 'OOP', 'DBMS', 'Operating Systems', 'Computer Networks']
   },
   {
-    name: 'Systems',
-    icon: Cpu,
-    skills: ['Distributed Systems', 'System Design', 'Microservices', 'Scalable Systems']
-  },
-  {
-    name: 'Currently Exploring',
-    icon: Brain,
-    skills: ['AI Agents', 'Automation Systems', 'Decision Making Systems', 'Large Scale Architectures']
+    name: 'Cloud & Tools',
+    icon: Cloud,
+    skills: ['AWS', 'Git', 'GitHub', 'VS Code', 'Docker']
   }
 ];
 
@@ -76,7 +71,7 @@ const TiltCard = ({ category }) => {
         rotateX,
         transformStyle: "preserve-3d",
       }}
-      className="glass-panel p-6 rounded-none border border-white/5 hover:border-[#FF1E1E]/40 transition-colors duration-300 relative group cursor-crosshair bg-[#0A0A0A]/80"
+      className="glass-panel p-6 rounded-none border border-white/5 hover:border-[#FF1E1E]/40 transition-colors duration-300 relative group cursor-crosshair bg-[#0A0A0A]/80 h-full flex flex-col"
     >
       <div 
         style={{ transform: "translateZ(30px)" }}
@@ -145,7 +140,7 @@ const Skills = () => {
 
         {/* Categories Grid */}
         <div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           style={{ perspective: 1000 }}
         >
           {SKILL_CATEGORIES.map((cat, idx) => (
@@ -155,6 +150,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="h-full"
             >
               <TiltCard category={cat} />
             </motion.div>
