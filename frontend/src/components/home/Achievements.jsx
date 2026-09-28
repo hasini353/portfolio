@@ -4,20 +4,22 @@ import { Trophy, Code, Cloud, Database } from 'lucide-react';
 
 const ACHIEVEMENTS = [
   {
-    title: 'Problems Solved on LeetCode',
-    value: 500,
-    prefix: '',
-    suffix: '+',
-    icon: Code,
-    link: 'https://leetcode.com/u/hasini_353/'
-  },
-  {
-    title: 'LeetCode Contest Rating',
-    value: 1544,
+    title: 'Microsoft Fabric Analytics Engineer Associate (DP-600)',
+    value: 1,
     prefix: '',
     suffix: '',
-    icon: Trophy,
-    link: 'https://leetcode.com/u/hasini_353/'
+    icon: Database,
+    isBoolean: true,
+    link: 'https://learn.microsoft.com/en-us/users/gundubogulahasini-9997/credentials/certification/fabric-analytics-engineer-associate?tab=credentials-tab'
+  },
+  {
+    title:'Microsoft Fabric Data Engineer Associate (DP-700)',
+    value: 1,
+    prefix: '',
+    suffix: '',
+    icon: Database,
+    isBoolean: true,
+    link: 'https://learn.microsoft.com/en-us/users/gundubogulahasini-9997/credentials/certification/fabric-data-engineer-associate?tab=credentials-tab'
   },
   {
     title: 'Microsoft SQL AI Developer Associate (DP-800)',
@@ -51,7 +53,7 @@ const ACHIEVEMENTS = [
     value: 1,
     prefix: '',
     suffix: '',
-    icon: Database,
+    icon: Cloud,
     isBoolean: true,
     link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=AC7EF90B7A919641C2198C4BA18A2F5BFB944969C9EC0E244419BB6F924962D7'
   },
@@ -60,7 +62,7 @@ const ACHIEVEMENTS = [
     value: 1,
     prefix: '',
     suffix: '',
-    icon: Database,
+    icon: Cloud,
     isBoolean: true,
     link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=EDC09677A9C39764D7C8CBB9B452315A59C629033421CB7D2A3AAD9FF6C9D972'
   },
@@ -69,7 +71,7 @@ const ACHIEVEMENTS = [
     value: 1,
     prefix: '',
     suffix: '',
-    icon: Database,
+    icon: Cloud,
     isBoolean: true,
     link: 'https://www.credly.com/badges/ae544521-bac0-4759-bb7b-a5762bf489bc/public_url'
   },
@@ -78,7 +80,7 @@ const ACHIEVEMENTS = [
     value: 1,
     prefix: '',
     suffix: '',
-    icon: Database,
+    icon: Cloud,
     isBoolean: true,
     link: 'https://www.credly.com/badges/29c21727-35b1-4ff2-8e8f-25db9fc7df1b/public_url'
   }

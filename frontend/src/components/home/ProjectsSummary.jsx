@@ -4,19 +4,19 @@ import { Github, ExternalLink, Activity, Database, Server, Cpu } from 'lucide-re
 
 const PROJECTS = [
   {
-    title: 'RevenuePilot',
-    subtitle: 'Autonomous Revenue Operating System',
-    description: 'An AI-powered revenue optimization platform using Gemini and deterministic MongoDB analytics to identify cross-sell and customer revenue opportunities.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini', 'Razorpay'],
-    features: ['AI Optimization', 'Policy Engine', 'Razorpay Webhooks', 'Machine-Readable Endpoints'],
+    title: 'Blood Bank',
+    subtitle: 'Centralized Healthcare & Emergency Blood Network',
+    description: 'A centralized digital healthcare platform connecting donors, hospitals, and blood banks to streamline emergency blood requests, manage real-time inventory across all 8 blood groups, and coordinate donation drives.',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+    features: ['Emergency Blood Pipeline', 'Real-Time Inventory', 'Role-Based Access', 'Donor Eligibility Engine'],
     achievements: [
-      'Implemented REST APIs with a policy engine and human-in-the-loop approval.',
-      'Integrated Razorpay APIs for payment-link creation and transaction tracking.',
-      'Developed commerce endpoints supporting UAP, ACP, AP2, and x402.'
+      'Engineered automated donor eligibility tracking with 90-day medical cooldown enforcement.',
+      'Implemented instant hospital-to-lab emergency request workflows with real-time status tracking.',
+      'Built secure role-based portals for 4 stakeholders: Donors, Hospitals, Labs, and Admins.'
     ],
     links: {
-      github: 'https://github.com/hasini353/RevenuePilot',
-      demo: ''
+      github: 'https://github.com/hasini353/Blood-Bank',
+      demo: 'https://blood-bank-mu-lovat.vercel.app/'
     }
   },
   {
@@ -34,6 +34,22 @@ const PROJECTS = [
     links: {
       github: 'https://github.com/hasini353/career-advisor',
       demo: 'https://career-advisor-58ufj5x8x-hasini353s-projects.vercel.app/login'
+    }
+  },
+  {
+    title: 'RevenuePilot',
+    subtitle: 'Autonomous Revenue Operating System',
+    description: 'An AI-powered revenue optimization platform using Gemini and deterministic MongoDB analytics to identify cross-sell and customer revenue opportunities.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini', 'Razorpay'],
+    features: ['AI Optimization', 'Policy Engine', 'Razorpay Webhooks', 'Machine-Readable Endpoints'],
+    achievements: [
+      'Implemented REST APIs with a policy engine and human-in-the-loop approval.',
+      'Integrated Razorpay APIs for payment-link creation and transaction tracking.',
+      'Developed commerce endpoints supporting UAP, ACP, AP2, and x402.'
+    ],
+    links: {
+      github: 'https://github.com/hasini353/RevenuePilot',
+      demo: ''
     }
   },
   {
