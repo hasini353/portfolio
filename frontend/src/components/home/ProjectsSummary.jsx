@@ -127,9 +127,16 @@ const ProjectsSummary = () => {
                 <div className="space-y-6 relative z-10">
                   {/* Header */}
                   <div>
-                    <h3 className="text-3xl font-black text-white uppercase tracking-wider mb-2 group-hover:text-[#FF1E1E] transition-colors">
-                      {project.title}
-                    </h3>
+                    <a
+                      href={project.links.demo || project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block group/title"
+                    >
+                      <h3 className="text-3xl font-black text-white uppercase tracking-wider mb-2 group-hover:text-[#FF1E1E] group-hover/title:text-[#FF1E1E] transition-colors">
+                        {project.title}
+                      </h3>
+                    </a>
                     <p className="text-[#A0A0A0] font-mono text-sm uppercase tracking-widest border-b border-white/10 pb-4">
                       {project.subtitle}
                     </p>

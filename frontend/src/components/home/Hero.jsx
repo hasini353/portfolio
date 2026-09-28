@@ -145,19 +145,31 @@ const Hero = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10 border-t border-white/5 mt-10"
           >
             {[
-              { label: 'DSA Problems Solved', value: '500+', icon: Terminal },
-              { label: 'LeetCode Rating', value: '1544', icon: Activity },
+              { label: 'DSA Problems Solved', value: '500+', icon: Terminal, link: 'https://leetcode.com/u/hasini_353' },
+              { label: 'LeetCode Rating', value: '1544', icon: Activity, link: 'https://leetcode.com/u/hasini_353' },
               { label: 'CGPA', value: '8.93', icon: Star },
               { label: 'AWS AI/ML Intern', value: '2025', icon: Briefcase },
-            ].map((stat, i) => (
-              <div key={i} className="flex flex-col space-y-2 p-3 bg-[#0F0F0F]/50 border border-[#FF1E1E]/10 rounded-lg hover:border-[#FF1E1E]/40 transition-colors">
-                <div className="flex items-center space-x-2 text-[#A0A0A0]">
-                  <stat.icon className="w-4 h-4 text-[#FF1E1E]" />
-                  <span className="text-[10px] uppercase tracking-wider font-mono">{stat.label}</span>
+            ].map((stat, i) => {
+              const Content = (
+                <div className="flex flex-col space-y-2 p-3 bg-[#0F0F0F]/50 border border-[#FF1E1E]/10 rounded-lg hover:border-[#FF1E1E]/40 transition-colors h-full">
+                  <div className="flex items-center space-x-2 text-[#A0A0A0]">
+                    <stat.icon className="w-4 h-4 text-[#FF1E1E]" />
+                    <span className="text-[10px] uppercase tracking-wider font-mono">{stat.label}</span>
+                  </div>
+                  <div className="text-xl font-black text-white font-mono">{stat.value}</div>
                 </div>
-                <div className="text-xl font-black text-white font-mono">{stat.value}</div>
-              </div>
-            ))}
+              );
+
+              return stat.link ? (
+                <a key={i} href={stat.link} target="_blank" rel="noopener noreferrer" className="block">
+                  {Content}
+                </a>
+              ) : (
+                <div key={i} className="block">
+                  {Content}
+                </div>
+              );
+            })}
           </motion.div>
 
         </div>
