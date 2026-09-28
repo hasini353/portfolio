@@ -10,7 +10,7 @@ const ACHIEVEMENTS = [
     suffix: '',
     icon: Database,
     isBoolean: true,
-    link: 'https://learn.microsoft.com/en-us/users/gundubogulahasini-9997/credentials/certification/fabric-analytics-engineer-associate?tab=credentials-tab'
+    link: 'https://learn.microsoft.com/api/credentials/share/en-us/GUNDUBOGULAHASINI-9997/EAED0492C71B9038?sharingId=C8336FAC04871A6B'
   },
   {
     title:'Microsoft Fabric Data Engineer Associate (DP-700)',
@@ -19,7 +19,7 @@ const ACHIEVEMENTS = [
     suffix: '',
     icon: Database,
     isBoolean: true,
-    link: 'https://learn.microsoft.com/en-us/users/gundubogulahasini-9997/credentials/certification/fabric-data-engineer-associate?tab=credentials-tab'
+    link: 'https://learn.microsoft.com/api/credentials/share/en-us/GUNDUBOGULAHASINI-9997/4496FD9BD92CCCB0?sharingId=C8336FAC04871A6B'
   },
   {
     title: 'Microsoft SQL AI Developer Associate (DP-800)',
