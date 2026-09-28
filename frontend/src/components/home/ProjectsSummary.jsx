@@ -181,12 +181,22 @@ const ProjectsSummary = () => {
 
                   <div className="flex items-center gap-6">
                     {project.links.demo && (
-                      <a href={project.links.demo} className="flex items-center space-x-2 text-white hover:text-[#FF1E1E] transition-colors group/link font-bold uppercase text-sm tracking-wider">
+                      <a 
+                        href={project.links.demo} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 text-white hover:text-[#FF1E1E] transition-colors group/link font-bold uppercase text-sm tracking-wider"
+                      >
                         <ExternalLink size={16} />
                         <span>Live Demo</span>
                       </a>
                     )}
-                    <a href={project.links.github} className="flex items-center space-x-2 text-[#A0A0A0] hover:text-white transition-colors group/link font-bold uppercase text-sm tracking-wider">
+                    <a 
+                      href={project.links.github} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-[#A0A0A0] hover:text-white transition-colors group/link font-bold uppercase text-sm tracking-wider"
+                    >
                       <Github size={16} />
                       <span>GitHub</span>
                     </a>
