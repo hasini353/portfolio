@@ -119,7 +119,7 @@ const Hero = () => {
             </a>
             
             <a
-              href="/Anu_Updated.pdf"
+              href="/Hasini_Gundubogula_Resume.pdf"
               download="Hasini_Gundubogula_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
